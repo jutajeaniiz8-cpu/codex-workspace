@@ -21,17 +21,19 @@ def main() -> int:
 
     try:
         from markitdown import MarkItDown
-    except ImportError as exc:
+    except ImportError:
         print(
             "UNREADABLE / ERROR: MarkItDown is not installed. Run: "
-            "python -m pip install -r .agents/skills/universal-file-reader/requirements.txt",
+            "python -m pip install -r requirements.txt",
             file=sys.stderr,
         )
         return 3
 
     try:
         converter = MarkItDown(enable_plugins=False)
-        result = converter.convert(str(source))
+        # MarkItDown 0.1.7 exposes convert_local(), the narrow local-file API.
+        # Keeping this local-only prevents accidental remote retrieval from this skill.
+        result = converter.convert_local(str(source))
         text = getattr(result, "text_content", None)
         if text is None:
             raise RuntimeError("MarkItDown returned no text_content")
