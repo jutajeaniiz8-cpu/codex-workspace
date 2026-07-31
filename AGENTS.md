@@ -26,6 +26,8 @@ python -m pip install -r requirements.txt
 
 Then rerun the self-test.
 
+The GitHub Actions workflow `.github/workflows/universal-file-reader-ci.yml` repeats this install-and-self-test flow in a clean Python 3.12 environment whenever the skill or its dependencies change.
+
 ### Source fidelity
 
 - Never invent missing or unreadable content.
