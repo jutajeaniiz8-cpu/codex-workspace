@@ -47,7 +47,7 @@ python .agents/skills/universal-file-reader/scripts/inspect_file.py INPUT_FILE
 5. If dependencies are missing and installation is allowed:
 
 ```bash
-python -m pip install -r .agents/skills/universal-file-reader/requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 6. Report results using these categories when relevant:
@@ -55,6 +55,16 @@ python -m pip install -r .agents/skills/universal-file-reader/requirements.txt
    - `STRUCTURE`
    - `UNREADABLE / ERROR`
    - `INFERENCE` (only when the user asked for interpretation)
+
+## Validation
+
+Before relying on the skill in a new runtime, run:
+
+```bash
+python .agents/skills/universal-file-reader/scripts/self_test.py
+```
+
+A healthy runtime prints `SELF-TEST PASS`.
 
 ## Spreadsheet fidelity rules
 
