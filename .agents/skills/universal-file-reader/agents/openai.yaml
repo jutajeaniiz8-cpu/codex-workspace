@@ -1,0 +1,4 @@
+interface:
+  display_name: "Universal File Reader"
+  short_description: "Read and audit many local file formats with source-fidelity safeguards"
+  default_prompt: "Use $universal-file-reader to inspect the requested local files. Preserve source fidelity and do not invent unreadable or missing content."
