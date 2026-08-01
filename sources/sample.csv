@@ -1,0 +1,4 @@
+id,name,status
+1,Universal File Reader,ready
+2,MarkItDown,installed
+3,openpyxl,installed
